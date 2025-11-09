@@ -57,6 +57,15 @@ export interface Feedback {
   createdAt: string;
 }
 
+export interface PortfolioCut {
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+  isPopular: boolean;
+  isHype: boolean;
+}
+
 export interface BarbershopData {
   name: string;
   address: string;
@@ -75,4 +84,5 @@ export interface StorageData {
   services: Service[];
   appointments: Appointment[];
   feedbacks: Feedback[];
+  portfolioCuts: PortfolioCut[];
 }

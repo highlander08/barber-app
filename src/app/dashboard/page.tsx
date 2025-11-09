@@ -174,6 +174,9 @@ export default function Dashboard() {
             <Link href="/list-feedback" className="text-slate-300 hover:text-white transition-colors text-sm">
               Feedbacks
             </Link>
+            <Link href="/portfolio" className="text-slate-300 hover:text-white transition-colors text-sm">
+              Portfólio
+            </Link>
           </nav>
         </div>
       </header>
@@ -571,6 +574,17 @@ export default function Dashboard() {
                   <div className="text-left">
                     <div className="font-semibold text-sm sm:text-base">Feedbacks</div>
                     <div className="text-slate-300 text-xs sm:text-sm hidden sm:block">Ver avaliações</div>
+                  </div>
+                </Link>
+
+                <Link 
+                  href="/portfolio" 
+                  className="bg-slate-700 hover:bg-slate-600 text-white p-3 sm:p-4 rounded-lg transition-colors flex items-center gap-2 sm:gap-3"
+                >
+                  <div className="text-xl sm:text-2xl">🖼️</div>
+                  <div className="text-left">
+                    <div className="font-semibold text-sm sm:text-base">Portfólio</div>
+                    <div className="text-slate-300 text-xs sm:text-sm hidden sm:block">Galeria de cortes</div>
                   </div>
                 </Link>
               </div>

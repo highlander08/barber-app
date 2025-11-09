@@ -55,6 +55,40 @@ const initialData: StorageData = {
   ],
   appointments: [],
   feedbacks: [],
+  portfolioCuts: [
+    {
+      id: 'p1',
+      name: 'Low Fade',
+      description: 'Um degradê suave que começa baixo, próximo à orelha, ideal para um visual limpo e discreto.',
+      imageUrl: '/low-fade.jpg',
+      isPopular: true,
+      isHype: false,
+    },
+    {
+      id: 'p2',
+      name: 'Degradê Navalhado',
+      description: 'O corte começa na pele (zero) com a navalha, criando um contraste intenso e um acabamento impecável.',
+      imageUrl: '/degrade.jpg',
+      isPopular: true,
+      isHype: true,
+    },
+    {
+      id: 'p3',
+      name: 'Crop Moderno',
+      description: 'Corte texturizado no topo com uma franja reta e curta. Perfeito para um estilo arrojado e contemporâneo.',
+      imageUrl: '/MODERNO.png',
+      isPopular: false,
+      isHype: true,
+    },
+    {
+      id: 'p4',
+      name: 'Buzz Cut',
+      description: 'Um corte clássico e prático, todo feito na máquina, com um comprimento uniforme e muito curto.',
+      imageUrl: '/buzz.jpg',
+      isPopular: true,
+      isHype: false,
+    },
+  ],
 };
 
 export function useLocalStorage() {
