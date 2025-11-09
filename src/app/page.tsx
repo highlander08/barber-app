@@ -1,65 +1,292 @@
-import Image from "next/image";
+// 'use client';
+
+// import Link from 'next/link';
+// import { useLocalStorage } from '@/hooks/useLocalStorage';
+
+// export default function Home() {
+//   const { data, isLoaded } = useLocalStorage();
+
+//   if (!isLoaded) {
+//     return (
+//       <div className="min-h-screen flex items-center justify-center">
+//         <div className="text-white">Carregando...</div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+//       {/* Header */}
+//       <header className="bg-slate-800 border-b border-slate-700">
+//         <div className="container mx-auto px-4 py-4">
+//           <div className="flex justify-between items-center">
+//             <div>
+//               <h1 className="text-2xl font-bold text-amber-500">BarberFlow</h1>
+//               <p className="text-slate-400">{data.barbershop.name}</p>
+//             </div>
+//             <nav>
+//               <Link 
+//                 href="/dashboard" 
+//                 className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+//               >
+//                 Acessar Sistema
+//               </Link>
+//             </nav>
+//           </div>
+//         </div>
+//       </header>
+
+//       {/* Hero Section */}
+//       <main className="container mx-auto px-4 py-16">
+//         <div className="text-center mb-16">
+//           <h2 className="text-5xl font-bold mb-4">
+//             Gestão Completa para sua{' '}
+//             <span className="text-amber-500">Barbearia</span>
+//           </h2>
+//           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+//             Agendamentos online, controle de clientes, gestão de equipe e 
+//             relatórios financeiros em um só lugar.
+//           </p>
+//         </div>
+
+//         {/* Features Grid */}
+//         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+//           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+//             <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+//               <CalendarIcon />
+//             </div>
+//             <h3 className="text-xl font-semibold mb-2">Agendamento Online</h3>
+//             <p className="text-slate-400">
+//               Seus clientes agendam horários 24/7 pelo celular ou computador
+//             </p>
+//           </div>
+
+//           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+//             <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+//               <UsersIcon />
+//             </div>
+//             <h3 className="text-xl font-semibold mb-2">Controle de Clientes</h3>
+//             <p className="text-slate-400">
+//               Ficha completa com histórico, preferências e fotos
+//             </p>
+//           </div>
+
+//           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+//             <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+//               <BarChartIcon />
+//             </div>
+//             <h3 className="text-xl font-semibold mb-2">Gestão Financeira</h3>
+//             <p className="text-slate-400">
+//               Relatórios de vendas, comissões e desempenho da equipe
+//             </p>
+//           </div>
+//         </div>
+
+//         {/* Stats */}
+//         <div className="mt-16 bg-slate-800 rounded-xl p-8 max-w-4xl mx-auto">
+//           <div className="grid grid-cols-3 gap-8 text-center">
+//             <div>
+//               <div className="text-3xl font-bold text-amber-500">
+//                 {data.barbers.length}
+//               </div>
+//               <div className="text-slate-400">Barbeiros</div>
+//             </div>
+//             <div>
+//               <div className="text-3xl font-bold text-amber-500">
+//                 {data.clients.length}
+//               </div>
+//               <div className="text-slate-400">Clientes</div>
+//             </div>
+//             <div>
+//               <div className="text-3xl font-bold text-amber-500">
+//                 {data.appointments.filter(a => a.status === 'completed').length}
+//               </div>
+//               <div className="text-slate-400">Serviços Realizados</div>
+//             </div>
+//           </div>
+//         </div>
+//       </main>
+//     </div>
+//   );
+// }
+
+// // Ícones simples (substitua por lucide-react depois)
+// function CalendarIcon() {
+//   return (
+//     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+//     </svg>
+//   );
+// }
+
+// function UsersIcon() {
+//   return (
+//     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+//     </svg>
+//   );
+// }
+
+// function BarChartIcon() {
+//   return (
+//     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+//     </svg>
+//   );
+// }
+
+'use client';
+
+import Link from 'next/link';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function Home() {
+  const { data, isLoaded } = useLocalStorage();
+
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-900">
+        <div className="text-white">Carregando...</div>
+      </div>
+    );
+  }
+
+  // Garantir que os arrays existam mesmo se estiverem vazios
+  const barbers = data.barbers || [];
+  const clients = data.clients || [];
+  const appointments = data.appointments || [];
+  const completedAppointments = appointments.filter(a => a.status === 'completed');
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      {/* Header */}
+      <header className="bg-slate-800 border-b border-slate-700">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-bold text-amber-500">BarberFlow</h1>
+              <p className="text-slate-400">{data.barbershop.name}</p>
+            </div>
+            <nav>
+              <Link 
+                href="/dashboard" 
+                className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+              >
+                Acessar Sistema
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <main className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 text-white">
+            Gestão Completa para sua{' '}
+            <span className="text-amber-500">Barbearia</span>
+          </h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Agendamentos online, controle de clientes, gestão de equipe e 
+            relatórios financeiros em um só lugar.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+              <CalendarIcon />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-white">Agendamento Online</h3>
+            <p className="text-slate-400">
+              Seus clientes agendam horários 24/7 pelo celular ou computador
+            </p>
+          </div>
+
+          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+              <UsersIcon />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-white">Controle de Clientes</h3>
+            <p className="text-slate-400">
+              Ficha completa com histórico, preferências e fotos
+            </p>
+          </div>
+
+          <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4">
+              <BarChartIcon />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-white">Gestão Financeira</h3>
+            <p className="text-slate-400">
+              Relatórios de vendas, comissões e desempenho da equipe
+            </p>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-16 bg-slate-800 rounded-xl p-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-amber-500">
+                {barbers.length}
+              </div>
+              <div className="text-slate-400">Barbeiros</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-amber-500">
+                {clients.length}
+              </div>
+              <div className="text-slate-400">Clientes</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-amber-500">
+                {completedAppointments.length}
+              </div>
+              <div className="text-slate-400">Serviços Realizados</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <Link 
+            href="/dashboard" 
+            className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Começar Agora - É Gratuito!
+          </Link>
+          <p className="text-slate-400 mt-4">
+            Não precisa de cartão de crédito. Configure em minutos.
+          </p>
         </div>
       </main>
     </div>
+  );
+}
+
+// Ícones simples
+function CalendarIcon() {
+  return (
+    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  );
+}
+
+function UsersIcon() {
+  return (
+    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+    </svg>
+  );
+}
+
+function BarChartIcon() {
+  return (
+    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>
   );
 }
