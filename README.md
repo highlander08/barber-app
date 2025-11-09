@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BarberFlow - Sistema de Gestão para Barbearias
 
-## Getting Started
+O **BarberFlow** é um sistema de gestão completo, moderno e intuitivo, projetado especificamente para as necessidades de barbearias e profissionais autônomos. Desenvolvido para rodar 100% no seu navegador, ele oferece todas as ferramentas essenciais para organizar seu negócio sem a necessidade de instalações complexas, servidores ou mensalidades.
 
-First, run the development server:
+## ✨ Principais Benefícios
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Custo Zero:** Totalmente gratuito. Sem taxas de assinatura, mensalidades ou custos com servidor.
+*   **Simplicidade Total:** Com uma interface limpa e focada no que realmente importa, qualquer pessoa pode começar a usar em minutos, sem necessidade de treinamento.
+*   **Funciona Offline:** Após o primeiro carregamento, o sistema funciona perfeitamente sem conexão com a internet, garantindo que sua gestão nunca pare.
+*   **Privacidade Garantida:** Todos os dados (clientes, agendamentos, faturamento) são armazenados localmente no seu próprio computador, oferecendo controle e privacidade total.
+*   **Gestão Integrada:** Do agendamento ao pagamento e feedback, todas as etapas do atendimento ao cliente estão conectadas em um único lugar.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Funcionalidades Detalhadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O sistema foi construído com um conjunto robusto de funcionalidades para otimizar o dia a dia da sua barbearia.
 
-## Learn More
+### 1. Dashboard Inteligente
+O painel principal oferece uma visão rápida e completa do seu negócio:
+- **Estatísticas Chave:** Acompanhe em tempo real o número de clientes, agendamentos para hoje, agendamentos para os próximos 7 dias e o faturamento total.
+- **Agenda do Dia:** Visualize todos os horários marcados para o dia, com informações do cliente, serviço e status.
+- **Próximos Agendamentos:** Planeje sua semana com uma lista dos próximos 5 agendamentos futuros.
+- **Ações Rápidas:** Atalhos para as funções mais importantes, como criar um novo agendamento, gerenciar clientes, equipe e serviços.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Gestão de Agendamentos
+- **Criação Rápida:** Adicione novos agendamentos de forma simples, vinculando cliente, barbeiro e serviço.
+- **Controle de Status:** Gerencie o ciclo de vida de cada agendamento com status claros: `Agendado`, `Confirmado`, `Concluído`, `Cancelado` e `Pago`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Pagamentos com PIX Integrado
+- **Geração Automática de QR Code:** Com um clique, gere um QR Code PIX dinâmico para cada agendamento, com o valor exato do serviço.
+- **Fluxo de Pagamento Simplificado:** O cliente escaneia o código e realiza o pagamento.
+- **Baixa Automática:** Ao confirmar o pagamento, o sistema automaticamente:
+    - Altera o status do agendamento para **"Pago"**.
+    - Adiciona o valor ao **faturamento total**.
+    - Move o registro para a tela de **"Pagamentos Feitos"**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Histórico de Pagamentos
+- Uma tela dedicada para listar todos os pagamentos recebidos, permitindo uma conferência rápida e organizada do seu histórico financeiro.
 
-## Deploy on Vercel
+### 5. Sistema de Feedback do Cliente
+- **Coleta de Opinião:** Envie um link para o cliente avaliar o atendimento, o serviço e deixar comentários.
+- **Perguntas Padronizadas:**
+    - Você gostou do atendimento? (Sim/Não)
+    - Você gostou do corte/serviço? (Sim/Não)
+    - Recomendaria a barbearia? (Sim/Não)
+    - Campo aberto para comentários.
+- **Central de Feedbacks:** Uma página exclusiva para você visualizar todas as avaliações recebidas, ajudando a identificar pontos fortes e oportunidades de melhoria.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 6. Cadastro e Gestão
+- **Clientes:** Mantenha uma base de dados completa dos seus clientes, com nome, contato e histórico de serviços.
+- **Equipe:** Cadastre os barbeiros do seu time, com suas especialidades e horários.
+- **Serviços:** Defina seu catálogo de serviços, com nome, descrição, duração e preço.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Como Funciona (Tecnologia)
+
+O BarberFlow é uma aplicação moderna construída com:
+- **Next.js** e **React** para uma interface rápida e reativa.
+- **TypeScript** para um código mais seguro e robusto.
+- **Tailwind CSS** para um design moderno e responsivo.
+- **LocalStorage do Navegador** como banco de dados, eliminando a necessidade de um backend e garantindo o funcionamento offline.
+
+Este projeto é a prova de que é possível ter uma ferramenta de gestão poderosa, completa e acessível para o seu negócio.
