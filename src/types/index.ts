@@ -47,6 +47,16 @@ export interface Appointment {
   createdAt: string;
 }
 
+export interface Feedback {
+  id: string;
+  appointmentId: string; // Para vincular ao agendamento
+  likedService: boolean;
+  likedCut: boolean;
+  wouldRecommend: boolean;
+  comment?: string;
+  createdAt: string;
+}
+
 export interface BarbershopData {
   name: string;
   address: string;
@@ -64,4 +74,5 @@ export interface StorageData {
   clients: Client[];
   services: Service[];
   appointments: Appointment[];
+  feedbacks: Feedback[];
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { StorageData, type Appointment, type Client, type Barber } from "@/types";
+import { StorageData, type Appointment, type Client, type Barber, type Feedback } from "@/types";
 
 const STORAGE_KEY = "barberflow-data";
 
@@ -54,6 +54,7 @@ const initialData: StorageData = {
     },
   ],
   appointments: [],
+  feedbacks: [],
 };
 
 export function useLocalStorage() {
@@ -63,7 +64,11 @@ export function useLocalStorage() {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
-      setData(JSON.parse(stored));
+      const storedData = JSON.parse(stored);
+      // Mescla os dados do localStorage com os dados iniciais
+      // para garantir que novas chaves (como 'feedbacks') existam.
+      const mergedData = { ...initialData, ...storedData };
+      setData(mergedData);
     }
     setIsLoaded(true);
   }, []);
@@ -130,6 +135,22 @@ export function useLocalStorage() {
       ),
     };
     updateStorage(newData);
+  };
+
+  // 💬 Adicionar novo feedback
+  const addFeedback = (feedback: Omit<Feedback, "id" | "createdAt">) => {
+    const newFeedback: Feedback = {
+      ...feedback,
+      id: Date.now().toString(),
+      createdAt: new Date().toISOString(),
+    };
+    const newData = {
+      ...data,
+      feedbacks: [...data.feedbacks, newFeedback],
+    };
+    updateStorage(newData);
+    alert('Obrigado pelo seu feedback!');
+    return newFeedback;
   };
 
   // 💸 Processar pagamento PIX
@@ -202,6 +223,7 @@ export function useLocalStorage() {
     updateStorage,
     addClient,
     addBarber, // ✅ agora disponível para uso
+    addFeedback,
     addAppointment,
     updateClient,
     deleteClient,
